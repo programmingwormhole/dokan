@@ -63,7 +63,7 @@ class ProductCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: product.salePrice!.isEmpty
                     ? Text(
-                        '\$${product.regularPrice!.isEmpty ? '0.0' : product.regularPrice}',
+                        '\$${product.price}',
                         style: const TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.w700,

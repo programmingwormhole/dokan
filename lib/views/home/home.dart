@@ -1,6 +1,5 @@
 import 'package:dokan_multivendor/controllers/home_controller.dart';
 import 'package:dokan_multivendor/global_widgets/custom_app_bar.dart';
-import 'package:dokan_multivendor/global_widgets/custom_floating_button.dart';
 import 'package:dokan_multivendor/global_widgets/custom_product_card.dart';
 import 'package:dokan_multivendor/views/home/widgets/filter_section.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final controller = Get.put(HomeController());
 
     return Scaffold(
@@ -27,8 +27,8 @@ class HomeScreen extends StatelessWidget {
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 15.0,
-                    mainAxisSpacing: 15.0,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,
                     childAspectRatio: 0.65,
                   ),
                   itemCount: controller.products.length,

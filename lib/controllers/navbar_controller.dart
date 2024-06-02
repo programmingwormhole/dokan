@@ -1,4 +1,5 @@
 import 'package:dokan_multivendor/views/home/home.dart';
+import 'package:dokan_multivendor/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,8 +21,6 @@ class NavbarController extends GetxController {
       child: Text('Cart'),
     ),
 
-    const Center(
-      child: Text('Profile'),
-    ),
+    const ProfileScreen(),
   ];
 }

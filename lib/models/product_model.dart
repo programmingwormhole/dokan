@@ -10,19 +10,23 @@ class ProductModel {
   int? id;
   String? thumbnail;
   String? name;
+  String? price;
   String? regularPrice;
   String? salePrice;
   String? rating;
   List<Images>? images;
+  DateTime? createdDate;
 
   ProductModel({
     this.id,
     this.name,
     this.thumbnail,
     this.images,
+    this.price,
     this.salePrice,
     this.regularPrice,
     this.rating,
+    this.createdDate,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -35,11 +39,13 @@ class ProductModel {
     return ProductModel(
       id: json["id"],
       name: json["name"],
-      rating: json['average_rating'],
+      price: json['price'],
       salePrice: json['sale_price'],
       regularPrice: json['regular_price'],
       thumbnail: thumbnailUrl,
       images: imageList,
+      rating: json['average_rating'],
+      createdDate: DateTime.parse(json["date_created"]),
     );
   }
 }

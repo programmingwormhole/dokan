@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-
   // On initialize controller first calling the loadProducts function to load data from local assets
   @override
   void onInit() {
@@ -30,14 +29,63 @@ class HomeController extends GetxController {
   }
 
   // Default selected filter is Newest
-  var selectedFilter = 'Newest'.obs;
+  var selectedFilter = FilterOption.newest.obs;
 
   // Function to temporary update the selected filter
-  void tempUpdate(String filter) {
+  void tempUpdate(FilterOption filter) {
     selectedFilter.value = filter;
   }
+
   // Function to update the selected filter
   void updateFilter() {
-  }
+    // Apply filters based on the selected option
+    switch (selectedFilter.value) {
+      case FilterOption.newest:
+        products.value = List.from(products)
+          ..sort(
+            (a, b) => b.createdDate!.compareTo(a.createdDate!),
+          );
+        break;
+      case FilterOption.older:
+        products.value = List.from(products)
+          ..sort(
+            (a, b) => a.createdDate!.compareTo(b.createdDate!),
+          );
+        break;
+      case FilterOption.priceLowToHigh:
+        products.value = List.from(products)
+          ..sort(
+            (a, b) => int.parse(a.price ?? '0').compareTo(
+              int.parse(b.price ?? '0'),
+            ),
+          );
+        break;
+      case FilterOption.priceHighToLow:
+        products.value = List.from(products)
+          ..sort(
+            (a, b) => int.parse(b.price ?? '0').compareTo(
+              int.parse(a.price ?? '0'),
+            ),
+          );
+        break;
+      case FilterOption.bestSelling:
+        products.value = List.from(products)
+          ..sort(
+            (a, b) => b.rating!.compareTo(
+              a.rating!,
+            ),
+          );
+        break;
+    }
 
+    update();
+  }
+}
+
+enum FilterOption {
+  newest,
+  older,
+  priceLowToHigh,
+  priceHighToLow,
+  bestSelling,
 }

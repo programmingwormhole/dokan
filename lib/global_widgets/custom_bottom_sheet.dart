@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'custom_button.dart';
 
-void customBottomSheet(BuildContext context) {
+void filterBottomSheet(BuildContext context) {
   final controller = Get.put(HomeController());
 
   showModalBottomSheet<void>(
@@ -34,11 +34,26 @@ void customBottomSheet(BuildContext context) {
               Obx(() {
                 return Column(
                   children: [
-                    buildFilterOption('Newest', controller),
-                    buildFilterOption('Oldest', controller),
-                    buildFilterOption('Price low > High', controller),
-                    buildFilterOption('Price high > Low', controller),
-                    buildFilterOption('Best selling', controller),
+                    buildFilterOption(
+                      FilterOption.newest,
+                      controller,
+                    ),
+                    buildFilterOption(
+                      FilterOption.older,
+                      controller,
+                    ),
+                    buildFilterOption(
+                      FilterOption.priceLowToHigh,
+                      controller,
+                    ),
+                    buildFilterOption(
+                      FilterOption.priceHighToLow,
+                      controller,
+                    ),
+                    buildFilterOption(
+                      FilterOption.bestSelling,
+                      controller,
+                    ),
                   ],
                 );
               }),
@@ -80,7 +95,7 @@ void customBottomSheet(BuildContext context) {
   );
 }
 
-Widget buildFilterOption(String filter, HomeController controller) {
+Widget buildFilterOption(FilterOption filter, HomeController controller) {
   return CheckboxListTile(
     value: controller.selectedFilter.value == filter,
     checkboxShape: RoundedRectangleBorder(
@@ -96,8 +111,32 @@ Widget buildFilterOption(String filter, HomeController controller) {
         controller.tempUpdate(filter);
       }
     },
-    title: Text(filter),
+    title: Text(getFilterTitle(filter)),
     controlAffinity: ListTileControlAffinity.leading,
     contentPadding: EdgeInsets.zero,
   );
+}
+
+String getFilterTitle(FilterOption filter) {
+  String? title;
+
+  switch (filter) {
+    case FilterOption.newest:
+      title = 'Newest';
+      break;
+    case FilterOption.older:
+      title = 'Older';
+      break;
+    case FilterOption.priceLowToHigh:
+      title = 'Price low > High';
+      break;
+    case FilterOption.priceHighToLow:
+      title = 'Price high > Low';
+      break;
+    case FilterOption.bestSelling:
+      title = 'Best selling';
+      break;
+  }
+
+  return title;
 }

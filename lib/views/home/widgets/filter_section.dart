@@ -13,7 +13,7 @@ class FilterSection extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () => customBottomSheet(context),
+          onTap: () => filterBottomSheet(context),
           child: Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 15,
