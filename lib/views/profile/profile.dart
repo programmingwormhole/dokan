@@ -1,20 +1,28 @@
 import 'package:dokan_multivendor/components/common_shadow.dart';
+import 'package:dokan_multivendor/controllers/auth_controller.dart';
+import 'package:dokan_multivendor/controllers/profile_controller.dart';
 import 'package:dokan_multivendor/global_widgets/custom_app_bar.dart';
+import 'package:dokan_multivendor/global_widgets/custom_button.dart';
+import 'package:dokan_multivendor/global_widgets/custom_field.dart';
+import 'package:dokan_multivendor/global_widgets/custom_profile_tile.dart';
 import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
+import 'package:dokan_multivendor/views/profile/widgets/account_fields_section.dart';
 import 'package:dokan_multivendor/views/profile/widgets/profile_details_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../global_widgets/custom_dotted_circle.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final auth = Get.put(AuthController());
+    final controller = Get.put(ProfileController());
+
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'My Account',
         hideAction: true,
       ),
@@ -27,7 +35,6 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 const ProfileDetailsSection(),
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: AppColors.white,
@@ -38,7 +45,37 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      
+                      CustomProfileTile(
+                        title: 'Account',
+                        icon: SvgManager.personField,
+                        content: const AccountFieldsSection(),
+                      ),
+                      CustomProfileTile(
+                        title: 'Passwords',
+                        icon: SvgManager.lock,
+                      ),
+                      CustomProfileTile(
+                        title: 'Notification',
+                        icon: SvgManager.notification,
+                      ),
+                      CustomProfileTile(
+                        title: 'Wishlist',
+                        icon: SvgManager.heart,
+                      ),
+                      ListTile(
+                        onTap: () => auth.logout(),
+                        leading: const Icon(
+                          Icons.logout,
+                          color: Colors.red,
+                        ),
+                        title: const Text(
+                          'Logout',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 )

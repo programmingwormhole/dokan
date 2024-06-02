@@ -65,7 +65,7 @@ class AuthController extends GetxController {
   }
 
   // Attempt to Login
-  Future<void> login () async {
+  Future<void> login() async {
     if (loginKey.currentState!.validate()) {
       // Trigger the loading indicator
       isLoading.value = true;
@@ -97,8 +97,21 @@ class AuthController extends GetxController {
   }
 
   // Function to store jwt token to local storage
-  Future<void> storeToken (response) async {
+  Future<void> storeToken(response) async {
     final decode = jsonDecode(response.body);
     SharedServices.setData(SetType.string, 'token', decode['token']);
+    SharedServices.setData(SetType.string, 'name', decode['user_display_name']);
+    SharedServices.setData(SetType.string, 'email', decode['user_email']);
+  }
+
+  // Function to logout user
+  Future<void> logout() async {
+    // Remove all local storage data
+    SharedServices.removeData('token');
+    SharedServices.removeData('name');
+    SharedServices.removeData('email');
+
+    // Navigate the user to login screen again
+    Get.offAllNamed(RouteNames.login);
   }
 }

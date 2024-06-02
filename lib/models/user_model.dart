@@ -1,4 +1,5 @@
 class UserModel {
+  String? name;
   String? username;
   String? email;
   String? password;
@@ -6,6 +7,7 @@ class UserModel {
   String? profilePicture;
 
   UserModel({
+    this.name,
     this.username,
     this.email,
     this.password,
