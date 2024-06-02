@@ -12,7 +12,6 @@ class AccountFieldsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final controller = Get.put(ProfileController());
 
     return Column(
@@ -23,10 +22,26 @@ class AccountFieldsSection extends StatelessWidget {
           labelText: 'Email',
           hintText: 'mail@domain.com',
         ),
-        const CustomField(
-          fieldType: FieldType.border,
-          labelText: 'Full Name',
-          hintText: 'Your Full Name',
+        Form(
+          key: controller.accountKey,
+          child: Column(
+            children: [
+              CustomField(
+                fieldType: FieldType.border,
+                labelText: 'First Name',
+                hintText: 'Enter your first name',
+                isRequired: true,
+                onChanged: (value) => controller.fName.value = value,
+              ),
+              CustomField(
+                fieldType: FieldType.border,
+                labelText: 'Last Name',
+                hintText: 'Enter your last name',
+                isRequired: true,
+                onChanged: (value) => controller.lName.value = value,
+              ),
+            ],
+          ),
         ),
         const CustomField(
           fieldType: FieldType.border,
@@ -53,8 +68,7 @@ class AccountFieldsSection extends StatelessWidget {
               child: CustomButton(
                 buttonType: ButtonType.border,
                 label: 'Cancel',
-                onTap: () {
-                },
+                onTap: () {},
               ),
             ),
             const SizedBox(width: 20),
@@ -62,11 +76,7 @@ class AccountFieldsSection extends StatelessWidget {
               child: CustomButton(
                 backgroundColor: AppColors.secondary,
                 label: 'Save',
-                onTap: () {
-                  {
-                    Get.back();
-                  }
-                },
+                onTap: () => controller.updateProfile(),
               ),
             ),
           ],

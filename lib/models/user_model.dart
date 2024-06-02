@@ -1,5 +1,6 @@
 class UserModel {
-  String? name;
+  String? fName;
+  String? lName;
   String? username;
   String? email;
   String? password;
@@ -7,7 +8,8 @@ class UserModel {
   String? profilePicture;
 
   UserModel({
-    this.name,
+    this.fName,
+    this.lName,
     this.username,
     this.email,
     this.password,
@@ -15,9 +17,11 @@ class UserModel {
     this.profilePicture,
   });
 
-  Map<String, String> toMap () => {
-    'username' : username ?? '',
-    'email' : email ?? '',
-    'password' : password ?? '',
-  };
+  Map<String, String> toMap() => {
+        'username': username ?? '',
+        'email': email ?? '',
+        'password': password ?? '',
+      };
+
+  String name() => '${fName ?? ''} ${lName ?? ''}';
 }

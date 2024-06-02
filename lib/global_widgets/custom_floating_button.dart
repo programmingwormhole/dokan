@@ -8,17 +8,22 @@ class CustomFloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 56,
-      width: 56,
-      decoration: const BoxDecoration(
-        gradient: AppColors.gradient,
-        shape: BoxShape.circle,
-      ),
-      child: Center(
-        child: SvgPicture.asset(
-          SvgManager.search,
-          color: AppColors.white,
+    return InkWell(
+      onTap: () {
+        // Navigate to search screen
+      },
+      child: Container(
+        height: 56,
+        width: 56,
+        decoration: const BoxDecoration(
+          gradient: AppColors.gradient,
+          shape: BoxShape.circle,
+        ),
+        child: Center(
+          child: SvgPicture.asset(
+            SvgManager.search,
+            color: AppColors.white,
+          ),
         ),
       ),
     );

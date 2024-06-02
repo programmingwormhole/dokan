@@ -15,9 +15,9 @@ class CustomBottomBar extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: AppColors.black.withOpacity(.13),
+            color: AppColors.black.withOpacity(.1),
             blurRadius: 5,
-            offset: const Offset(0, -4),
+            offset: const Offset(0, -3),
           ),
         ],
       ),

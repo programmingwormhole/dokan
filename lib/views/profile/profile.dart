@@ -19,8 +19,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final auth = Get.put(AuthController());
-    final controller = Get.put(ProfileController());
-
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'My Account',

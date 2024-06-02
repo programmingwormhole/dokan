@@ -26,9 +26,13 @@ class ProfileDetailsSection extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(10),
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    controller.userModel.value.profilePicture ?? '',
-                  ),
+                  backgroundColor: AppColors.primary,
+                  backgroundImage:
+                      controller.userModel.value.profilePicture == null
+                          ? null
+                          : NetworkImage(
+                              controller.userModel.value.profilePicture!,
+                            ),
                 ),
               ),
             ),
@@ -36,13 +40,15 @@ class ProfileDetailsSection extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(controller.userModel.value.name ?? 'Loading...',
+          Text(
+            controller.userModel.value.name(),
             style: const TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: 24,
             ),
           ),
-          Text(controller.userModel.value.email ?? 'Loading...',
+          Text(
+            controller.userModel.value.email ?? 'Loading...',
             style: TextStyle(
               color: AppColors.black.withOpacity(.5),
               fontSize: 18,

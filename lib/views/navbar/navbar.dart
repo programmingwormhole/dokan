@@ -17,7 +17,7 @@ class NavBarView extends StatelessWidget {
         body: controller.screens[controller.currentIndex.value],
         floatingActionButton: const CustomFloatingButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        extendBody: true,
+        extendBody: controller.currentIndex.value == 0,
         bottomNavigationBar: const CustomBottomBar(),
       ),
     );

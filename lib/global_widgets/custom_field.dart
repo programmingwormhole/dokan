@@ -17,6 +17,7 @@ class CustomField extends StatelessWidget {
   final void Function(String)? onChanged;
   final bool? isSecured;
   final FieldType? fieldType;
+  final bool? isRequired;
 
   const CustomField({
     super.key,
@@ -28,6 +29,7 @@ class CustomField extends StatelessWidget {
     this.onChanged,
     this.fieldType,
     this.labelText,
+    this.isRequired,
   });
 
   @override
@@ -53,6 +55,14 @@ class CustomField extends StatelessWidget {
               TextFormField(
                 onChanged: onChanged,
                 obscureText: isSecured ?? false,
+                validator: isRequired == true
+                    ? (String? value) {
+                        if (value!.isEmpty) {
+                          return "Field can't be empty";
+                        }
+                        return null;
+                      }
+                    : null,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: AppColors.white,
@@ -76,8 +86,8 @@ class CustomField extends StatelessWidget {
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: Colors.red.withOpacity(.1),
+                    borderSide: const BorderSide(
+                      color: Colors.red,
                       width: 1.5,
                     ),
                   ),

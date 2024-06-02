@@ -1,3 +1,5 @@
+import 'package:dokan_multivendor/views/cart/cart.dart';
+import 'package:dokan_multivendor/views/categories/categories.dart';
 import 'package:dokan_multivendor/views/home/home.dart';
 import 'package:dokan_multivendor/views/profile/profile.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +15,8 @@ class NavbarController extends GetxController {
 
   List<Widget> screens = [
     const HomeScreen(),
-    const Center(
-      child: Text('Category'),
-    ),
-
-    const Center(
-      child: Text('Cart'),
-    ),
-
+    const CategoriesScreen(),
+    const CartScreen(),
     const ProfileScreen(),
   ];
 }
