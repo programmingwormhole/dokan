@@ -1,0 +1,49 @@
+name: dokan_multivendor
+description: "Dokan is the best WordPress eCommerce solution to build & manage your dream multi vendor marketplace."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  # State Management
+  get:
+
+  # SVG
+  flutter_svg:
+
+  # Local Storage
+  shared_preferences:
+
+  # Image Picker
+  image_picker:
+
+  # HTTP Request
+  http:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Assets Generator
+  build_runner:
+  flutter_gen_runner:
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svg/
+    - assets/data/
