@@ -13,7 +13,7 @@ class UserModel {
     this.profilePicture,
   });
 
-  Map<String, String> toRegister () => {
+  Map<String, String> toMap () => {
     'username' : username ?? '',
     'email' : email ?? '',
     'password' : password ?? '',

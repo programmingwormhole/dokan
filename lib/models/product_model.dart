@@ -10,10 +10,10 @@ class ProductModel {
   int? id;
   String? thumbnail;
   String? name;
-  double? regularPrice;
-  double? salePrice;
-  double? rating;
-  List<Image>? images;
+  String? regularPrice;
+  String? salePrice;
+  String? rating;
+  List<Images>? images;
 
   ProductModel({
     this.id,
@@ -26,29 +26,32 @@ class ProductModel {
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
-    List<Image> imageList = json['images'] == null
+    List<Images> imageList = json['images'] == null
         ? []
-        : List<Image>.from(json['images']!.map((x) => Image.fromJson(x)));
+        : List<Images>.from(json['images']!.map((x) => Images.fromJson(x)));
 
     var thumbnailUrl = imageList.isNotEmpty ? imageList[0].src : '';
 
     return ProductModel(
       id: json["id"],
       name: json["name"],
+      rating: json['average_rating'],
+      salePrice: json['sale_price'],
+      regularPrice: json['regular_price'],
       thumbnail: thumbnailUrl,
       images: imageList,
     );
   }
 }
 
-class Image {
+class Images {
   String? src;
 
-  Image({
+  Images({
     this.src,
   });
 
-  factory Image.fromJson(Map<String, dynamic> json) => Image(
+  factory Images.fromJson(Map<String, dynamic> json) => Images(
         src: json["src"],
       );
 }

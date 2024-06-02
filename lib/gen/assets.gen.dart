@@ -25,8 +25,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/no_image.webp
+  AssetGenImage get noImage =>
+      const AssetGenImage('assets/images/no_image.webp');
+
   /// List of all assets
-  List<AssetGenImage> get values => [logo];
+  List<AssetGenImage> get values => [logo, noImage];
 }
 
 class $AssetsSvgGen {
@@ -34,6 +38,12 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/camera.svg
   String get camera => 'assets/svg/camera.svg';
+
+  /// File path: assets/svg/cart.svg
+  String get cart => 'assets/svg/cart.svg';
+
+  /// File path: assets/svg/categories.svg
+  String get categories => 'assets/svg/categories.svg';
 
   /// File path: assets/svg/email.svg
   String get email => 'assets/svg/email.svg';
@@ -53,11 +63,20 @@ class $AssetsSvgGen {
   /// File path: assets/svg/google_logo.svg
   String get googleLogo => 'assets/svg/google_logo.svg';
 
+  /// File path: assets/svg/heart.svg
+  String get heart => 'assets/svg/heart.svg';
+
+  /// File path: assets/svg/home.svg
+  String get home => 'assets/svg/home.svg';
+
   /// File path: assets/svg/list.svg
   String get list => 'assets/svg/list.svg';
 
   /// File path: assets/svg/lock.svg
   String get lock => 'assets/svg/lock.svg';
+
+  /// File path: assets/svg/notification.svg
+  String get notification => 'assets/svg/notification.svg';
 
   /// File path: assets/svg/person.svg
   String get person => 'assets/svg/person.svg';
@@ -71,14 +90,19 @@ class $AssetsSvgGen {
   /// List of all assets
   List<String> get values => [
         camera,
+        cart,
+        categories,
         email,
         eyeOff,
         eyeOn,
         fbLogo,
         filter,
         googleLogo,
+        heart,
+        home,
         list,
         lock,
+        notification,
         person,
         personField,
         search

@@ -2,6 +2,7 @@ import 'package:dokan_multivendor/routes/route_names.dart';
 import 'package:dokan_multivendor/views/auth/login/login.dart';
 import 'package:dokan_multivendor/views/auth/register/register.dart';
 import 'package:dokan_multivendor/views/home/home.dart';
+import 'package:dokan_multivendor/views/navbar/navbar.dart';
 import 'package:dokan_multivendor/views/splash/splash.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +24,7 @@ List<GetPage> routeDestination = [
 
   GetPage(
     name: RouteNames.home,
-    page: () => const HomeScreen(),
+    page: () => const NavBarView(),
   ),
 
 ];

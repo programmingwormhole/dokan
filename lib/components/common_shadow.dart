@@ -7,5 +7,5 @@ List<BoxShadow> commonShadow = [
     color: AppColors.black.withOpacity(.1),
     blurRadius: 4,
     offset: const Offset(0, 3),
-  )
+  ),
 ];

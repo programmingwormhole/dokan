@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final controller = Get.put(AuthController());
 
     return Scaffold(
@@ -36,9 +37,9 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     CustomField(
                       leading: SvgManager.email,
-                      hintText: 'Email',
+                      hintText: 'Username Or Email',
                       onChanged: (value) =>
-                          controller.userModel.value.email = value,
+                          controller.userModel.value.username = value,
                     ),
                     Obx(
                       () => CustomField(
@@ -70,10 +71,11 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomButton(
-                label: 'Login',
-                onTap: () => Get.toNamed(
-                  RouteNames.home,
+              Obx(
+                () => CustomButton(
+                  label: 'Login',
+                  isLoading: controller.isLoading.value,
+                  onTap: () => controller.login(),
                 ),
               ),
               Row(

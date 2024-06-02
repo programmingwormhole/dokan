@@ -81,24 +81,28 @@ class RegisterScreen extends StatelessWidget {
                       CustomField(
                         leading: SvgManager.personField,
                         hintText: 'Username',
-                        onChanged: (value) => controller.userModel.value.username = value,
+                        onChanged: (value) =>
+                            controller.userModel.value.username = value,
                       ),
                       CustomField(
                         leading: SvgManager.email,
                         hintText: 'Email',
-                        onChanged: (value) => controller.userModel.value.email = value,
+                        onChanged: (value) =>
+                            controller.userModel.value.email = value,
                       ),
                       CustomField(
                         leading: SvgManager.lock,
                         hintText: 'Password',
                         isSecured: true,
-                        onChanged: (value) => controller.userModel.value.password = value,
+                        onChanged: (value) =>
+                            controller.userModel.value.password = value,
                       ),
                       CustomField(
                         leading: SvgManager.lock,
                         hintText: 'Confirm Password',
                         isSecured: true,
-                        onChanged: (value) => controller.userModel.value.cPassword = value,
+                        onChanged: (value) =>
+                            controller.userModel.value.cPassword = value,
                       ),
                     ],
                   ),
@@ -106,9 +110,12 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomButton(
-                  label: 'Sign Up',
-                  onTap: () => controller.register(),
+                Obx(
+                  () => CustomButton(
+                    isLoading: controller.isLoading.value,
+                    label: 'Sign Up',
+                    onTap: () => controller.register(),
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
