@@ -1,7 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:dokan_multivendor/components/common_shadow.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 enum FieldType {
   regular,
@@ -58,7 +61,7 @@ class CustomField extends StatelessWidget {
                 validator: isRequired == true
                     ? (String? value) {
                         if (value!.isEmpty) {
-                          return "Field can't be empty";
+                          return "validation_error".tr;
                         }
                         return null;
                       }
@@ -119,7 +122,7 @@ class CustomField extends StatelessWidget {
                 obscureText: isSecured ?? false,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Field can't be empty";
+                    return 'validation_error'.tr;
                   }
                   return null;
                 },

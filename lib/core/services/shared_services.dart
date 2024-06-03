@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum SetType { string, bool, int, double, stringList }
@@ -18,7 +19,7 @@ class SharedServices {
                         ? prefs.setStringList(key, value)
                         : null;
 
-    print('Data Stored As Key: $key');
+    debugPrint('Data Stored As Key: $key');
   }
 
   static Future getData(SetType type, String key) async {
@@ -36,7 +37,7 @@ class SharedServices {
                         ? prefs.getStringList(key)
                         : null;
 
-    print('Key: ${key} Value: ${data}');
+    debugPrint('Key: $key Value: $data');
 
     return data;
   }

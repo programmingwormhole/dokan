@@ -2,6 +2,7 @@ import 'package:dokan_multivendor/components/common_shadow.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 enum ButtonType {
   social,
@@ -85,7 +86,7 @@ class CustomButton extends StatelessWidget {
                             const SizedBox(
                               width: 10,
                             ),
-                            Text('Please Wait...',
+                            Text('please_wait'.tr,
                               style: TextStyle(
                                 color: buttonType == ButtonType.border
                                     ? AppColors.black

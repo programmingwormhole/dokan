@@ -1,13 +1,17 @@
 import 'package:dokan_multivendor/components/common_shadow.dart';
 import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../models/product_model.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel product;
 
-  const ProductCard({Key? key, required this.product}) : super(key: key);
+  const ProductCard({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,7 @@ class ProductCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  product.name ?? 'No Data',
+                  product.name ?? 'no_data'.tr,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(

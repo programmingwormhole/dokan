@@ -4,6 +4,7 @@ import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class FilterSection extends StatelessWidget {
   const FilterSection({super.key});
@@ -34,7 +35,7 @@ class FilterSection extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Filter',
+                      'filter'.tr,
                       style: TextStyle(
                         color: AppColors.black.withOpacity(.5),
                         fontWeight: FontWeight.w400,
@@ -46,7 +47,7 @@ class FilterSection extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'Short by',
+                      'short_by'.tr,
                       style: TextStyle(
                         color: AppColors.black.withOpacity(.5),
                         fontWeight: FontWeight.w400,

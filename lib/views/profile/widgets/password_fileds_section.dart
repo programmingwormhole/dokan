@@ -1,4 +1,3 @@
-import 'package:dokan_multivendor/controllers/profile_controller.dart';
 import 'package:dokan_multivendor/global_widgets/custom_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,25 +17,25 @@ class PasswordFieldsSection extends StatelessWidget {
       children: [
         Form(
           key: key,
-          child: const Column(
+          child: Column(
             children: [
               CustomField(
                 fieldType: FieldType.border,
-                labelText: 'Old Password',
-                hintText: 'Enter your old password',
-                isSecured: true,
-                isRequired: true,
-              ),
-              CustomField(
-                fieldType: FieldType.border,
-                labelText: 'New Password',
+                labelText: 'old_password'.tr,
                 hintText: '********',
                 isSecured: true,
                 isRequired: true,
               ),
               CustomField(
                 fieldType: FieldType.border,
-                labelText: 'Confirm New Password',
+                labelText: 'new_password'.tr,
+                hintText: '********',
+                isSecured: true,
+                isRequired: true,
+              ),
+              CustomField(
+                fieldType: FieldType.border,
+                labelText: 'confirm_new_password'.tr,
                 hintText: '********',
                 isSecured: true,
                 isRequired: true,
@@ -51,15 +50,15 @@ class PasswordFieldsSection extends StatelessWidget {
             Expanded(
               child: CustomButton(
                 buttonType: ButtonType.border,
-                label: 'Cancel',
+                label: 'cancel'.tr,
                 onTap: () {},
               ),
             ),
             const SizedBox(width: 20),
-            const Expanded(
+            Expanded(
               child: CustomButton(
                 backgroundColor: AppColors.secondary,
-                label: 'Save',
+                label: 'save'.tr,
               ),
             ),
           ],

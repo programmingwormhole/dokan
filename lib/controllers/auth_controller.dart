@@ -35,7 +35,7 @@ class AuthController extends GetxController {
   Future<void> register() async {
     if (registerKey.currentState!.validate()) {
       if (userModel.value.password != userModel.value.cPassword) {
-        snackBar('Password & Confirm Password Mismatch!');
+        snackBar('password_mismatch'.tr);
         return;
       }
 
@@ -56,7 +56,7 @@ class AuthController extends GetxController {
       }
 
       // If request is success show a success message and navigate the user to login screen
-      snackBar('User Registration was Successful');
+      snackBar('register_success'.tr);
       Get.offAllNamed(RouteNames.login);
 
       update();
@@ -122,7 +122,7 @@ class AuthController extends GetxController {
     return jsonDecode(response.body);
   }
 
-  // Store user ID
+  // Function to Store user ID
   Future<void> storeID () async {
     final response = await getUserData();
     SharedServices.setData(SetType.string, 'user_id', response['id'].toString());

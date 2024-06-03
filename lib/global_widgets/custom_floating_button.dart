@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
 import 'package:flutter/material.dart';

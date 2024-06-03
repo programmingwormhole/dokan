@@ -48,7 +48,7 @@ class ProfileDetailsSection extends StatelessWidget {
             ),
           ),
           Text(
-            controller.userModel.value.email ?? 'Loading...',
+            controller.userModel.value.email ?? 'please_wait'.tr,
             style: TextStyle(
               color: AppColors.black.withOpacity(.5),
               fontSize: 18,

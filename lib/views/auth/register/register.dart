@@ -80,26 +80,26 @@ class RegisterScreen extends StatelessWidget {
                     children: [
                       CustomField(
                         leading: SvgManager.personField,
-                        hintText: 'Username',
+                        hintText: 'username'.tr,
                         onChanged: (value) =>
                             controller.userModel.value.username = value,
                       ),
                       CustomField(
                         leading: SvgManager.email,
-                        hintText: 'Email',
+                        hintText: 'email'.tr,
                         onChanged: (value) =>
                             controller.userModel.value.email = value,
                       ),
                       CustomField(
                         leading: SvgManager.lock,
-                        hintText: 'Password',
+                        hintText: 'password'.tr,
                         isSecured: true,
                         onChanged: (value) =>
                             controller.userModel.value.password = value,
                       ),
                       CustomField(
                         leading: SvgManager.lock,
-                        hintText: 'Confirm Password',
+                        hintText: 'c_password'.tr,
                         isSecured: true,
                         onChanged: (value) =>
                             controller.userModel.value.cPassword = value,
@@ -113,7 +113,7 @@ class RegisterScreen extends StatelessWidget {
                 Obx(
                   () => CustomButton(
                     isLoading: controller.isLoading.value,
-                    label: 'Sign Up',
+                    label: 'sign_up'.tr,
                     onTap: () => controller.register(),
                   ),
                 ),
@@ -145,7 +145,7 @@ class RegisterScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      'already_have_account'.tr,
                       style: TextStyle(
                         color: AppColors.black.withOpacity(.5),
                         fontSize: 17,
@@ -157,9 +157,9 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () => Get.back(),
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(
+                      child: Text(
+                        'login'.tr,
+                        style: const TextStyle(
                           color: Color(0xFF2893E3),
                           fontSize: 17,
                           fontWeight: FontWeight.w700,

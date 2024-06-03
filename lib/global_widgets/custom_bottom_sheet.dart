@@ -24,9 +24,9 @@ void filterBottomSheet(BuildContext context) {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Text(
-                'Filter',
-                style: TextStyle(
+              Text(
+                'filter'.tr,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 17,
                 ),
@@ -66,7 +66,7 @@ void filterBottomSheet(BuildContext context) {
                   Expanded(
                     child: CustomButton(
                       buttonType: ButtonType.border,
-                      label: 'Cancel',
+                      label: 'cancel'.tr,
                       onTap: () {
                         Get.back();
                       },
@@ -76,7 +76,7 @@ void filterBottomSheet(BuildContext context) {
                   Expanded(
                     child: CustomButton(
                       backgroundColor: AppColors.secondary,
-                      label: 'Apply',
+                      label: 'apply'.tr,
                       onTap: () {
                         {
                           controller.updateFilter();
@@ -122,19 +122,19 @@ String getFilterTitle(FilterOption filter) {
 
   switch (filter) {
     case FilterOption.newest:
-      title = 'Newest';
+      title = 'newest'.tr;
       break;
     case FilterOption.older:
-      title = 'Older';
+      title = 'older'.tr;
       break;
     case FilterOption.priceLowToHigh:
-      title = 'Price low > High';
+      title = 'pp_l_h'.tr;
       break;
     case FilterOption.priceHighToLow:
-      title = 'Price high > Low';
+      title = 'pp_h_l'.tr;
       break;
     case FilterOption.bestSelling:
-      title = 'Best selling';
+      title = 'best_selling'.tr;
       break;
   }
 

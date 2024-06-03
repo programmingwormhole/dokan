@@ -24,9 +24,8 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ImageManager.logo.image(),
-              const Text(
-                'Sign In',
-                style: TextStyle(
+              Text('sign_in'.tr,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 25,
                 ),
@@ -37,14 +36,14 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     CustomField(
                       leading: SvgManager.email,
-                      hintText: 'Username Or Email',
+                      hintText: 'username_or_email'.tr,
                       onChanged: (value) =>
                           controller.userModel.value.username = value,
                     ),
                     Obx(
                       () => CustomField(
                         leading: SvgManager.lock,
-                        hintText: 'Password',
+                        hintText: 'password'.tr,
                         isSecured: controller.isSecured.value,
                         trailing: controller.isSecured.value
                             ? SvgManager.eyeOn
@@ -60,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        'Forgot Password?',
+                        'forgot_password'.tr,
                         style: TextStyle(
                           color: Colors.black.withOpacity(.5),
                           fontWeight: FontWeight.w500,
@@ -73,7 +72,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Obx(
                 () => CustomButton(
-                  label: 'Login',
+                  label: 'login'.tr,
                   isLoading: controller.isLoading.value,
                   onTap: () => controller.login(),
                 ),
@@ -100,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                   RouteNames.register,
                 ),
                 child: Text(
-                  'Create New Account',
+                  'create_account'.tr,
                   style: TextStyle(
                     color: AppColors.black.withOpacity(.5),
                     fontWeight: FontWeight.w300,

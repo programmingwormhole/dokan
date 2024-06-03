@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dokan_multivendor/models/product_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -21,10 +22,9 @@ class HomeController extends GetxController {
       final String response =
           await rootBundle.loadString('assets/data/products.json');
       final data = json.decode(response) as List;
-      print(data.length);
       products.value = data.map((json) => ProductModel.fromJson(json)).toList();
     } catch (e) {
-      print('Error loading products: $e');
+      debugPrint('Error loading products: $e');
     }
   }
 

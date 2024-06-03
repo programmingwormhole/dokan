@@ -69,7 +69,7 @@ class ProfileController extends GetxController {
       SharedServices.setData(SetType.string, 'name', '${fName.value} ${lName.value}');
 
       // Show a success message and navigate to home
-      snackBar('Profile successfully updated');
+      snackBar('profile_update_success'.tr);
       Get.offAllNamed(RouteNames.home);
     }
   }

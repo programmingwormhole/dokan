@@ -1,4 +1,3 @@
-import 'package:dokan_multivendor/controllers/navbar_controller.dart';
 import 'package:dokan_multivendor/controllers/profile_controller.dart';
 import 'package:dokan_multivendor/global_widgets/custom_field.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +16,9 @@ class AccountFieldsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomField(
+        CustomField(
           fieldType: FieldType.border,
-          labelText: 'Email',
+          labelText: 'email'.tr,
           hintText: 'mail@domain.com',
         ),
         Form(
@@ -28,36 +27,36 @@ class AccountFieldsSection extends StatelessWidget {
             children: [
               CustomField(
                 fieldType: FieldType.border,
-                labelText: 'First Name',
-                hintText: 'Enter your first name',
+                labelText: 'first_name'.tr,
+                hintText: 'enter_first_name'.tr,
                 isRequired: true,
                 onChanged: (value) => controller.fName.value = value,
               ),
               CustomField(
                 fieldType: FieldType.border,
-                labelText: 'Last Name',
-                hintText: 'Enter your last name',
+                labelText: 'last_name'.tr,
+                hintText: 'enter_first_name'.tr,
                 isRequired: true,
                 onChanged: (value) => controller.lName.value = value,
               ),
             ],
           ),
         ),
-        const CustomField(
+        CustomField(
           fieldType: FieldType.border,
-          labelText: 'Street Address',
+          labelText: 'street_address'.tr,
           hintText: '465 Nolan Causeway Suite 079',
         ),
-        const CustomField(
+        CustomField(
           fieldType: FieldType.border,
-          labelText: 'Apt, Suite, Bldg (optional)',
+          labelText: 'apt_suite'.tr,
           hintText: 'Unit 512',
         ),
         SizedBox(
           width: MediaQuery.sizeOf(context).width * .3,
-          child: const CustomField(
+          child: CustomField(
             fieldType: FieldType.border,
-            labelText: 'Zip Code',
+            labelText: 'zip_code'.tr,
             hintText: '77017',
           ),
         ),
@@ -67,7 +66,7 @@ class AccountFieldsSection extends StatelessWidget {
             Expanded(
               child: CustomButton(
                 buttonType: ButtonType.border,
-                label: 'Cancel',
+                label: 'cancel'.tr,
                 onTap: () {},
               ),
             ),
@@ -76,7 +75,7 @@ class AccountFieldsSection extends StatelessWidget {
               child: Obx(
                 () => CustomButton(
                   backgroundColor: AppColors.secondary,
-                  label: 'Save',
+                  label: 'save'.tr,
                   isLoading: controller.isLoading.value,
                   onTap: () => controller.updateProfile(),
                   showLoadingText: false,

@@ -14,8 +14,8 @@ class HomeScreen extends StatelessWidget {
     final controller = Get.put(HomeController());
 
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Product List',
+      appBar: CustomAppBar(
+        title: 'product_list'.tr,
       ),
       body: Obx(
         () => Padding(

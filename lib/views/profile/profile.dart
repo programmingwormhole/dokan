@@ -1,9 +1,6 @@
 import 'package:dokan_multivendor/components/common_shadow.dart';
 import 'package:dokan_multivendor/controllers/auth_controller.dart';
-import 'package:dokan_multivendor/controllers/profile_controller.dart';
 import 'package:dokan_multivendor/global_widgets/custom_app_bar.dart';
-import 'package:dokan_multivendor/global_widgets/custom_button.dart';
-import 'package:dokan_multivendor/global_widgets/custom_field.dart';
 import 'package:dokan_multivendor/global_widgets/custom_profile_tile.dart';
 import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
@@ -11,7 +8,6 @@ import 'package:dokan_multivendor/views/profile/widgets/account_fields_section.d
 import 'package:dokan_multivendor/views/profile/widgets/password_fileds_section.dart';
 import 'package:dokan_multivendor/views/profile/widgets/profile_details_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -21,8 +17,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final auth = Get.put(AuthController());
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'My Account',
+      appBar: CustomAppBar(
+        title: 'my_account'.tr,
         hideAction: true,
       ),
       body: Padding(
@@ -45,21 +41,21 @@ class ProfileScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomProfileTile(
-                        title: 'Account',
+                        title: 'account'.tr,
                         icon: SvgManager.personField,
                         content: const AccountFieldsSection(),
                       ),
                       CustomProfileTile(
-                        title: 'Passwords',
+                        title: 'password'.tr,
                         icon: SvgManager.lock,
                         content: const PasswordFieldsSection(),
                       ),
                       CustomProfileTile(
-                        title: 'Notification',
+                        title: 'notification'.tr,
                         icon: SvgManager.notification,
                       ),
                       CustomProfileTile(
-                        title: 'Wishlist',
+                        title: 'wishlist'.tr,
                         icon: SvgManager.heart,
                       ),
                       ListTile(
@@ -68,9 +64,9 @@ class ProfileScreen extends StatelessWidget {
                           Icons.logout,
                           color: Colors.red,
                         ),
-                        title: const Text(
-                          'Logout',
-                          style: TextStyle(
+                        title: Text(
+                          'logout'.tr,
+                          style: const TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.w400,
                           ),

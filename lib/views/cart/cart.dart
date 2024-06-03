@@ -1,15 +1,16 @@
 import 'package:dokan_multivendor/global_widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppBar(title: 'Cart'),
+    return Scaffold(
+      appBar: CustomAppBar(title: 'cart'.tr),
       body: Center(
-        child: Text('Cart Screen'),
+        child: Text('cart'.tr),
       ),
     );
   }
