@@ -23,8 +23,9 @@ class CustomBottomBarButton extends StatelessWidget {
         onPressed: () => controller.changeView(index),
         icon: SvgPicture.asset(
           icon,
-          color:
-              controller.currentIndex.value == index ? AppColors.primary : null,
+          color: controller.currentIndex.value == index
+              ? AppColors.primary
+              : const Color(0xFF6E7FAA),
         ),
       ),
     );

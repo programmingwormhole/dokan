@@ -73,8 +73,6 @@ class AuthController extends GetxController {
       // Hit the api as store response as response variable
       final response = await ApiServices.login(userModel.value);
 
-      print(response.body);
-
       // After got the response trigger the loading indicator off
       isLoading.value = false;
 
@@ -90,6 +88,9 @@ class AuthController extends GetxController {
 
       // If request is success navigate the user to home screen
       Get.offAllNamed(RouteNames.home);
+
+      // After login get user data and store user id to local storage
+      storeID();
 
       update();
       return;
@@ -114,4 +115,17 @@ class AuthController extends GetxController {
     // Navigate the user to login screen again
     Get.offAllNamed(RouteNames.login);
   }
+
+  // Function to get user data using bearer token
+  Future<Map<String, dynamic>> getUserData() async {
+    final response = await ApiServices.user();
+    return jsonDecode(response.body);
+  }
+
+  // Store user ID
+  Future<void> storeID () async {
+    final response = await getUserData();
+    SharedServices.setData(SetType.string, 'user_id', response['id'].toString());
+  }
+
 }

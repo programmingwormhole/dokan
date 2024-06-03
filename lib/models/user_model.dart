@@ -1,4 +1,5 @@
 class UserModel {
+  String? id;
   String? fName;
   String? lName;
   String? username;
@@ -8,6 +9,7 @@ class UserModel {
   String? profilePicture;
 
   UserModel({
+    this.id,
     this.fName,
     this.lName,
     this.username,
@@ -22,6 +24,12 @@ class UserModel {
         'email': email ?? '',
         'password': password ?? '',
       };
+
+
+  Map<String, String> toUpdate () => {
+    'first_name': fName ?? '',
+    'last_name': lName ?? '',
+  };
 
   String name() => '${fName ?? ''} ${lName ?? ''}';
 }

@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
   final bool? isLoading;
   final ButtonType? buttonType;
   final Color? backgroundColor;
+  final bool? showLoadingText;
 
   const CustomButton({
     super.key,
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
     this.isLoading,
     this.buttonType,
     this.backgroundColor,
+    this.showLoadingText,
   });
 
   @override
@@ -79,19 +81,31 @@ class CustomButton extends StatelessWidget {
                                   : AppColors.white,
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Please Wait...',
-                            style: TextStyle(
-                              color: buttonType == ButtonType.border
-                                  ? AppColors.black
-                                  : AppColors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 17,
+                          if (showLoadingText != false) ...[
+                            const SizedBox(
+                              width: 10,
                             ),
-                          )
+                            Text('Please Wait...',
+                              style: TextStyle(
+                                color: buttonType == ButtonType.border
+                                    ? AppColors.black
+                                    : AppColors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
+                          if (isLoading == true)...[
+                            Text('',
+                              style: TextStyle(
+                                color: buttonType == ButtonType.border
+                                    ? AppColors.black
+                                    : AppColors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 17,
+                              ),
+                            )
+                          ]
                         ],
                       )
                     : Text(

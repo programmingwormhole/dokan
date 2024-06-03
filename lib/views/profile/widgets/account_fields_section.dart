@@ -73,10 +73,14 @@ class AccountFieldsSection extends StatelessWidget {
             ),
             const SizedBox(width: 20),
             Expanded(
-              child: CustomButton(
-                backgroundColor: AppColors.secondary,
-                label: 'Save',
-                onTap: () => controller.updateProfile(),
+              child: Obx(
+                () => CustomButton(
+                  backgroundColor: AppColors.secondary,
+                  label: 'Save',
+                  isLoading: controller.isLoading.value,
+                  onTap: () => controller.updateProfile(),
+                  showLoadingText: false,
+                ),
               ),
             ),
           ],

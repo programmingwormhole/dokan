@@ -8,6 +8,7 @@ import 'package:dokan_multivendor/global_widgets/custom_profile_tile.dart';
 import 'package:dokan_multivendor/utils/assets_maneger.dart';
 import 'package:dokan_multivendor/utils/colors.dart';
 import 'package:dokan_multivendor/views/profile/widgets/account_fields_section.dart';
+import 'package:dokan_multivendor/views/profile/widgets/password_fileds_section.dart';
 import 'package:dokan_multivendor/views/profile/widgets/profile_details_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -51,6 +52,7 @@ class ProfileScreen extends StatelessWidget {
                       CustomProfileTile(
                         title: 'Passwords',
                         icon: SvgManager.lock,
+                        content: const PasswordFieldsSection(),
                       ),
                       CustomProfileTile(
                         title: 'Notification',

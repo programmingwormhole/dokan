@@ -6,7 +6,7 @@ import 'package:dokan_multivendor/utils/endpoints.dart';
 import 'package:http/http.dart' as client;
 
 class ApiServices {
-  // Register
+  // [POST] Register API
   static Future<client.Response> register(UserModel userModel) async {
     return await client.post(
       ApiEndpoints.register,
@@ -17,6 +17,7 @@ class ApiServices {
     );
   }
 
+  // [POST] Login API
   static Future<client.Response> login(UserModel userModel) async {
     return await client.post(
       ApiEndpoints.login,
@@ -29,4 +30,22 @@ class ApiServices {
           .join('&'),
     );
   }
+
+  // [GET] User Data
+  static Future<client.Response> user () async {
+    return await client.get(
+      ApiEndpoints.userProfile,
+      headers: await RequestHeader.auth(),
+    );
+  }
+
+  // [POST] Update User Profile
+  static Future<client.Response> updateProfile (UserModel userModel) async {
+    return await client.post(
+      Uri.parse('${ApiEndpoints.users}/${userModel.id}'),
+      headers: await RequestHeader.auth(),
+      body: userModel.toUpdate(),
+    );
+  }
+
 }
