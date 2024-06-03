@@ -31,19 +31,21 @@ This is an example of how to list things you need to use the software and how to
 Follow the below steps to run the application on your device.
 
 1. Clone the repo
-```sh  
-git clone https://github.com/programmingwormhole/dokan.git```  
-2. Open Project In IDE  
-```sh  
-Android Studio, VS Code, or any other Flutter Supported IDE```  
-3. Get Dependencies  
-```js  
-flutter pub get  
-```  
+   ```sh
+   git clone https://github.com/programmingwormhole/dokan.git
+   ```
+2. Open Project In IDE
+   ```sh
+   Android Studio, VS Code, or any other Flutter Supported IDE
+   ```
+3. Get Dependencies
+   ```js
+   flutter pub get
+   ```
 4. Run
-```js  
-flutter run  
-```  
+   ```js
+   flutter run
+   ```
 
 <!-- ROADMAP -->  
 ## Key Features
