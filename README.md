@@ -13,7 +13,7 @@ Crafted with precision and passion, My Flutter app brings the power of Dokan to 
 <!-- Demo -->  
 ## Demo Access
 [![Download][Download]][Download-url]  
-<h3><a href="https://mega.nz/file/VoBmwTAT#MM0V7JTdVbixruA_qr04ip-qfntHyRT1zex_oaw_kzA" target="_blank">Alternative Download Link</a></h3>
+<h3><a href="https://mega.nz/file/8pp0VS6Z#gusX0ZaUVGGLyBjqeEBGctuxRkWniUwC6jTiyhOWL4g">Alternative Download Link</a></h3>
 
 
 <!-- GETTING STARTED -->  
@@ -47,7 +47,7 @@ Follow the below steps to run the application on your device.
    flutter run
    ```
 
-<!-- ROADMAP -->  
+<!-- FEATURES -->  
 ## Key Features
 - [x] WordPress Authentication System With JWT Access Token.
 - [x] Keep logged-in user by storing JWT token.
@@ -55,7 +55,7 @@ Follow the below steps to run the application on your device.
 - [x] Product Filtering System
 - [x] User Profile Section
 - [x] Update User Profile (First name & Last Name only)
-<!-- Package -->  
+<!-- PACKAGES -->  
 ## Packages
 - [x] GetX (For State management)
 - [x] http (For API request)
@@ -70,4 +70,4 @@ Follow the below steps to run the application on your device.
 [Dart]: https://camo.githubusercontent.com/a0a1ad90011aa02e7e6f32be4998b8843f0884eed20b575c8a2189859550824d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646172742d2532333031373543322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d64617274266c6f676f436f6c6f723d7768697465
 [Dart-url]: https://dart.dev
 [Download]: https://camo.envatousercontent.com/66cff805c4d35c74668291a51e21f978424565d9/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f70726f6772616d6d696e67776f726d686f6c652f656e7661746f2f6d61696e2f64656d6f2e676966
-[Download-url]: https://drive.google.com/file/d/1-0YdzS4ifqA1FHmi-e2UfmN2meYE6j0U/view?usp=sharing
+[Download-url]: https://drive.google.com/file/d/1ol9DWPNNBG7WhEv2fC_Muj4i11QfENnd/view?usp=sharing
