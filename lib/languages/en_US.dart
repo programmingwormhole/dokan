@@ -46,4 +46,5 @@ Map<String, String> en_US = {
   'old_password' : 'Old Password',
   'new_password' : 'New Password',
   'confirm_new_password' : 'Confirm New Password',
+  'product_ist' : 'Product List',
 };
